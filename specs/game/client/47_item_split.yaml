@@ -1,0 +1,12 @@
+meta:
+  id: item_consume
+  endian: le
+seq:
+  - id: unk
+    type: u1
+  - id: bag_slot_source
+    type: u2
+  - id: bag_slot_dest
+    type: u2
+  - id: quantity
+    type: u4

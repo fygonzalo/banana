@@ -1,0 +1,231 @@
+name: Angels Online
+type: kaitai
+parsers:
+  # Login Client
+  - name: Auth request
+    when: type == Login and sender == Client and code == 2
+    file: specs/login/client/2_auth_request.yaml
+  - name: Create char
+    when: type == Login and sender == Client and code == 3
+    file: specs/login/client/3_create_char.yaml
+  - name: Delete char
+    when: type == Login and sender == Client and code == 4
+    file: specs/login/client/4_delete_char.yaml
+  - name: Recover char
+    when: type == Login and sender == Client and code == 5
+    file: specs/login/client/5_recover_char.yaml
+  - name: Enter game
+    when: type == Login and sender == Client and code == 6
+    file: specs/login/client/6_enter_game.yaml
+  - name: Create pin
+    when: type == Login and sender == Client and code == 7
+    file: specs/login/client/7_create_pin.yaml
+  - name: Change pin
+    when: type == Login and sender == Client and code == 9
+    file: specs/login/client/9_change_pin.yaml
+  - name: Delete pin
+    when: type == Login and sender == Client and code == 10
+    file: specs/login/client/10_delete_pin.yaml
+  # Login Server
+  - name: Auth response
+    when: type == Login and sender == Server and code == 0
+    file: specs/login/server/0_auth_response.yaml
+  - name: Char created
+    when: type == Login and sender == Server and code == 1
+    file: specs/login/server/1_char_created.yaml
+  - name: Char delete start countdown
+    when: type == Login and sender == Server and code == 2
+    file: specs/login/server/2_char_delete_start.yaml
+  - name: Char delete stop countdown
+    when: type == Login and sender == Server and code == 3
+    file: specs/login/server/3_char_delete_stop.yaml
+  - name: Game address
+    when: type == Login and sender == Server and code == 4 
+    file: specs/login/server/4_game_address.yaml
+  - name: Pin created
+    when: type == Login and sender == Server and code == 5
+    file: specs/login/server/5_pin_created.yaml
+  - name: Pin changed
+    when: type == Login and sender == Server and code == 7
+    file: specs/login/server/7_pin_changed.yaml
+  - name: Pin deleted
+    when: type == Login and sender == Server and code == 8
+    file: specs/login/server/8_pin_deleted.yaml
+  - name: Announcement
+    when: type == Login and sender == Server and code == 12 
+    file: specs/login/server/12_announcement.yaml
+  # Game Client
+  - name: Auth request
+    when: type == Game and sender == Client and code == 2
+    file: specs/game/client/2_auth_request.yaml
+  - name: Move
+    when: type == Game and sender == Client and code == 4
+    file: specs/game/client/4_move.yaml
+  - name: Cast
+    when: type == Game and sender == Client and code == 6
+    file: specs/game/client/6_cast.yaml
+  - name: Message
+    when: type == Game and sender == Client and code == 14
+    file: specs/game/client/14_message.yaml
+  - name: Sync
+    when: type == Game and sender == Client and code == 15
+    file: specs/game/client/15_sync.yaml
+  - name: Equip item
+    when: type == Game and sender == Client and code == 18
+    file: specs/game/client/18_item_equip.yaml
+  - name: Delete item
+    when: type == Game and sender == Client and code == 19
+    file: specs/game/client/19_item_delete.yaml
+  - name: Interact
+    when: type == Game and sender == Client and code == 22
+    file: specs/game/client/22_interact.yaml
+  - name: Create team
+    when: type == Game and sender == Client and code == 23
+    file: specs/game/client/23_team_create.yaml
+  - name: Team management
+    when: type == Game and sender == Client and code == 24
+    file: specs/game/client/24_team_action.yaml
+  - name: Add friend
+    when: type == Game and sender == Client and code == 25
+    file: specs/game/client/25_friend_add.yaml
+  - name: Accept friend
+    when: type == Game and sender == Client and code == 27
+    file: specs/game/client/27_friend_accept.yaml
+  - name: Buy from store
+    when: type == Game and sender == Client and code == 39
+    file: specs/game/client/39_store_buy.yaml
+  - name: Consume item
+    when: type == Game and sender == Client and code == 46 
+    file: specs/game/client/46_item_consume.yaml
+  - name: Item split
+    when: type == Game and sender == Client and code == 47
+    file: specs/game/client/47_item_split.yaml
+  - name: Channel message
+    when: type == Game and sender == Client and code == 294
+    file: specs/game/client/294_channel_message.yaml
+  - name: Whisper
+    when: type == Game and sender == Client and code == 295
+    file: specs/game/client/295_whisper.yaml
+  # Game Server
+  - name: Spawn player
+    when: type == Game and sender == Server and code == 1
+    file: specs/game/server/1_spawn_player.yaml
+  - name: Spawn self
+    when: type == Game and sender == Server and code == 2
+    file: specs/game/server/2_spawn_self.yaml
+  - name: Teleport
+    when: type == Game and sender == Server and code == 3
+    file: specs/game/server/3_teleport.yaml
+  - name: Moved
+    when: type == Game and sender == Server and code == 5
+    file: specs/game/server/5_moved.yaml
+  - name: Remove entity
+    when: type == Game and sender == Server and code == 7
+    file: specs/game/server/7_remove_entity.yaml
+  - name: Spawn entity
+    when: type == Game and sender == Server and code == 8
+    file: specs/game/server/8_spawn_object.yaml
+  - name: Attack
+    when: type == Game and sender == Server and code == 10
+    file: specs/game/server/10_attack.yaml
+  - name: Heal
+    when: type == Game and sender == Server and code == 11
+    file: specs/game/server/11_heal.yaml
+  - name: Game address
+    when: type == Game and sender == Server and code == 12
+    file: specs/game/server/12_game_address.yaml
+  - name: System log
+    when: type == Game and sender == Server and code == 13
+    file: specs/game/server/13_system_log.yaml
+  - name: Cast
+    when: type == Game and sender == Server and code == 17
+    file: specs/game/server/17_cast.yaml
+  - name: Update object
+    when: type == Game and sender == Server and code == 19
+    file: specs/game/server/19_update_object.yaml
+  - name: Sync
+    when: type == Game and sender == Server and code == 21
+    file: specs/game/server/21_sync.yaml
+  - name: Rotate
+    when: type == Game and sender == Server and code == 22
+    file: specs/game/server/22_rotate.yaml
+  - name: Message
+    when: type == Game and sender == Server and code == 23
+    file: specs/game/server/23_message.yaml
+  - name: Emote
+    when: type == Game and sender == Server and code == 25
+    file: specs/game/server/25_emote.yaml
+  - name: Items
+    when: type == Game and sender == Server and code == 26
+    file: specs/game/server/26_items.yaml
+  - name: Items Update
+    when: type == Game and sender == Server and code == 27
+    file: specs/game/server/27_items_update.yaml
+  - name: Entity action
+    when: type == Game and sender == Server and code == 29
+    file: specs/game/server/29_entity_action.yaml
+  - name: Reset timer
+    when: type == Game and sender == Server and code == 30
+    file: specs/game/server/30_reset_timer.yaml
+  - name: Team invite
+    when: type == Game and sender == Server and code == 35
+    file: specs/game/server/35_team_invite.yaml
+  - name: Team management
+    when: type == Game and sender == Server and code == 37
+    file: specs/game/server/37_team_management.yaml
+  - name: Team stats update
+    when: type == Game and sender == Server and code == 38
+    file: specs/game/server/38_team_update.yaml
+  - name: Friend list
+    when: type == Game and sender == Server and code == 39
+    file: specs/game/server/39_friend_list.yaml
+  - name: Friend connected
+    when: type == Game and sender == Server and code == 40
+    file: specs/game/server/40_friend_connected.yaml
+  - name: Friend request
+    when: type == Game and sender == Server and code == 41
+    file: specs/game/server/41_friend_request.yaml
+  - name: Friend added
+    when: type == Game and sender == Server and code == 42
+    file: specs/game/server/42_friend_added.yaml
+  - name: Friend rejected
+    when: type == Game and sender == Server and code == 43
+    file: specs/game/server/43_friend_reject.yaml
+  - name: Friend misc update
+    when: type == Game and sender == Server and code == 44
+    file: specs/game/server/44_friend_update.yaml
+  - name: Friend deleted
+    when: type == Game and sender == Server and code == 45
+    file: specs/game/server/45_friend_deleted.yaml
+  - name: Update stats
+    when: type == Game and sender == Server and code == 66
+    file: specs/game/server/66_set_stats.yaml
+  - name: Load bank
+    when: type == Game and sender == Server and code == 78
+    file: specs/game/server/78_load_bank.yaml
+  - name: Item mall
+    when: type == Game and sender == Server and code == 95
+    file: specs/game/server/95_store.yaml
+  - name: Whisper
+    when: type == Game and sender == Server and code == 295
+    file: specs/game/server/295_whisper.yaml
+  - name: Broadcast
+    when: type == Game and sender == Server and code == 296
+    file: specs/game/server/296_broadcast.yaml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

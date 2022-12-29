@@ -1,0 +1,15 @@
+meta:
+  id: teleport
+  endian: le
+seq:
+  - id: entity_id
+    type: u4
+  - id: dst
+    type: position
+types:
+  position: #Low precision
+    seq:
+      - id: x
+        type: u4
+      - id: y
+        type: u4

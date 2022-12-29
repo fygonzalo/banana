@@ -1,0 +1,45 @@
+meta:
+  id: entity_action # item_lock
+  endian: le
+seq:
+  - id: target
+    type: u4
+  - id: unk1
+    type: u1
+  - id: action
+    type: u1
+  - id: arguments # 10 = ride
+    type:
+      switch-on: action
+      cases:
+        1: equip
+        3: cooldown
+        4: buff
+        53: unk
+        _: dummy
+types:
+  cooldown:
+    seq:
+    - id: object
+      type: u4
+    - id: time
+      type: u4
+  equip:
+    seq:
+    - id: slot
+      type: u4
+    - id: item
+      type: u4
+  buff:
+    seq:
+      - id: effect
+        type: u4
+      - id: time
+        type: u4
+  unk:
+    seq:
+      - id: unk1
+        type: u4
+      - id: unk2
+        type: u4
+  dummy: {}

@@ -1,0 +1,10 @@
+meta:
+  id: client_delete_char
+  endian: le
+seq:
+  - id: unk1
+    size: 1
+  - id: pin
+    type: strz
+    size: 33
+    encoding: ISO-8859-1

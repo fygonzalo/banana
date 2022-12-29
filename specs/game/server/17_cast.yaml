@@ -1,0 +1,27 @@
+meta:
+  id: cast
+  endian: le
+seq:
+  - id: sprite
+    type: u1
+  - id: unk1
+    type: u1
+  - id: source
+    type: u4
+  - id: target
+    type: u4
+  - id: position
+    type: position
+  - id: duration
+    type: u2
+  - id: animation
+    type: u1
+  - id: spell_id
+    type: u2
+types:
+  position:
+    seq:
+      - id: x
+        type: u4
+      - id: y
+        type: u4

@@ -1,0 +1,10 @@
+meta:
+  id: client_enter_game
+  endian: le
+seq:
+  - id: unk1
+    size: 2
+  - id: pin
+    type: strz
+    size: 33
+    encoding: ISO-8859-1

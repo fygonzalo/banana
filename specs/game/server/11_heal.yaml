@@ -1,0 +1,12 @@
+meta:
+  id: heal
+  endian: le
+seq:
+  - id: entity_id
+    type: u4
+  - id: type # HP MP
+    type: u1
+  - id: amount
+    type: u4
+  - id: unk
+    type: u2

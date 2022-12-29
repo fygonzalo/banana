@@ -1,0 +1,8 @@
+meta:
+  id: team_action
+  endian: le
+seq:
+  - id: code # 01 = accept, 03 = set leader, 07 = reject
+    type: u1
+  - id: unk
+    size: 4

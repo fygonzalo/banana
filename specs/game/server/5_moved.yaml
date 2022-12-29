@@ -1,0 +1,19 @@
+meta:
+  id: moved
+  endian: le
+seq:
+  - id: entity_id
+    type: u4
+  - id: src
+    type: position
+  - id: dst
+    type: position
+  - id: speed
+    type: u2
+types:
+  position:
+    seq:
+      - id: x
+        type: u4
+      - id: y
+        type: u4

@@ -1,0 +1,10 @@
+meta:
+  id: update_object
+  endian: le
+seq:
+  - id: target
+    type: u4
+  - id: code # 01 06 = weight
+    type: u2
+  - id: argument
+    type: u4

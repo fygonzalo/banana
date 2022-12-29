@@ -1,0 +1,5 @@
+seq:
+  - id: unk1
+    type: u4
+  - id: timer # seconds
+    type: u4

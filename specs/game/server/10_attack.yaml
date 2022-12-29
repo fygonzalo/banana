@@ -1,0 +1,8 @@
+meta:
+  id: attack
+  endian: le
+seq:
+  - id: source
+    type: u4
+  - id: target # HP MP
+    type: u4

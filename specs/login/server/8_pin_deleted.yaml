@@ -1,0 +1,6 @@
+meta:
+  id: server_pin_deleted
+  endian: le
+seq:
+  - id: result
+    size: 1

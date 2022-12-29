@@ -1,0 +1,6 @@
+meta:
+  id: server_pin_created
+  endian: le
+seq:
+  - id: result
+    size: 1 # 1 OK , 0 Invalid password

@@ -1,0 +1,10 @@
+meta:
+  id: store_buy
+  endian: le
+seq:
+  - id: unk
+    type: u4
+  - id: item
+    type: u4
+  - id: quantity
+    type: u4

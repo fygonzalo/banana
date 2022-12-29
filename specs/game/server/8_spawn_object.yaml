@@ -1,0 +1,35 @@
+meta:
+  id: spawn_object
+  endian: le
+seq:
+  - id: entity_id
+    type: u4
+  - id: tag_visibility
+    type: u4
+  - id: position
+    type: position
+  - id: nick
+    type: strz
+    size: 17
+    encoding: ISO-8859-1
+  - id: orientation
+    type: u1
+  - id: model
+    type: u4
+  - id: faction
+    type: u2
+  - id: level
+    type: u4
+  - id: unk2
+    type: u2
+  - id: type
+    type: u4
+  - id: unk3
+    size: 12
+types:
+  position: # Low presicion
+    seq:
+      - id: x
+        type: u4
+      - id: y
+        type: u4

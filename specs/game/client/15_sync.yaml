@@ -1,0 +1,12 @@
+meta:
+  id: sync
+  endian: le
+seq:
+  - id: delta
+    type: u2
+  - id: group 
+    type: u2
+  - id: base
+    type: u2
+  - id: count
+    type: u2

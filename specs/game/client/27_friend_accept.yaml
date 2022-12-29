@@ -1,0 +1,6 @@
+meta:
+  id: friend_accept
+  endian: le
+seq:
+  - id: unk
+    size: 4

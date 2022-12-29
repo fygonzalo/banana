@@ -1,0 +1,6 @@
+meta:
+  id: server_pin_changed
+  endian: le
+seq:
+  - id: result
+    size: 1 # 1 OK

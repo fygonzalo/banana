@@ -1,0 +1,6 @@
+meta:
+  id: item_delete
+  endian: le
+seq:
+  - id: bag_slot
+    type: u2

@@ -1,0 +1,37 @@
+meta:
+  id: create_char
+  endian: le
+seq:
+  - id: unk1
+    type: u1
+  - id: gender
+    type: u1
+  - id: hair_style
+    type: u1
+  - id: height
+    type: u1
+  - id: hair_color
+    type: u1
+  - id: skin_color
+    type: u1
+  - id: nickname
+    type: strz
+    size: 17
+    encoding: ISO-8859-1
+  - id: unknown
+    size: 27
+  - id: month
+    type: u1
+  - id: day
+    type: u1
+  - id: blood_type
+    type: u1
+  - id: place
+    type: u1
+  - id: job
+    type: u1
+  - id: face
+    type: u1
+  - id: pty
+    type: u1
+    

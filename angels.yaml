@@ -1,0 +1,9 @@
+name: Angels Online
+parser: parser.py
+fields:
+  - name: Time
+  - name: Peer
+  - name: Type
+  - name: Sender
+  - name: Code
+  - name: Length

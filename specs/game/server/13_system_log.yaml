@@ -1,0 +1,13 @@
+meta:
+  id: system_log
+  endian: le
+seq:
+  - id: code
+    type: u1
+  - id: unk
+    type: u2
+  - id: title
+    type: strz
+    encoding: ISO-8859-1
+  - id: unk2
+    type: u2

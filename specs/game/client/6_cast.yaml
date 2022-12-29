@@ -1,0 +1,8 @@
+meta:
+  id: cast
+  endian: le
+seq:
+  - id: effect
+    type: u2
+  - id: target
+    type: u4

@@ -1,0 +1,37 @@
+meta:
+  id: store
+  endian: le
+seq:
+  - id: count
+    type: u4
+  - id: items
+    type: item
+    repeat: expr
+    repeat-expr: count
+types:
+  item:
+    seq:
+      - id: id
+        type: u4
+      - id: item_id
+        type: u4
+      - id: flags
+        type: u4
+      - id: pos
+        type: u4
+      - id: page
+        type: u4
+      - id: amount
+        type: u4
+      - id: full_price
+        type: u4
+      - id: discount_price
+        type: u4
+      - id: unk_1
+        size: 4
+      - id: deadline
+        type: strz
+        encoding: ISO-8859-1
+        size: 10
+      - id: unk_2
+        size: 5

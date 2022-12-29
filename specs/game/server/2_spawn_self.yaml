@@ -1,0 +1,172 @@
+meta:
+  id: spawn_self
+  endian: le
+seq:
+  - id: entity_id
+    type: u4
+  - id: position
+    type: position
+  - id: nick
+    type: strz
+    size: 17
+    encoding: ISO-8859-1
+  - id: title
+    type: strz
+    encoding: ISO-8859-1
+    size: 13
+  - id: unk2
+    size: 5
+  - id: model
+    type: u4
+  - id: attributes
+    type: attributes
+  - id: faction
+    type: u1
+  - id: unk4
+    size: 4
+  - id: level
+    type: u4
+  - id: experience
+    type: experience
+  - id: rank
+    type: rank
+  - id: stats
+    type: stats
+  - id: char_id
+    type: u4
+  - id: skills
+    type: skill
+    repeat: expr
+    repeat-expr: 36
+types:
+  rank:
+    seq:
+    - id: level
+      type: u1
+    - id: cur
+      type: u4
+    - id: req
+      type: u4
+  skill:
+    seq:
+    - id: id
+      type: u1
+    - id: level
+      type: u2
+    - id: next
+      type: u2
+    - id: experience
+      type: u4
+    - id: required
+      type: u4
+    - id: order
+      type: u1
+    
+  experience:
+    seq:
+      - id: cur
+        type: u8
+      - id: floor
+        type: u8
+      - id: top
+        type: u8
+  stats:
+    seq:
+      - id: hp
+        type: stat_u4
+      - id: mp
+        type: stat_u4
+      - id: sp
+        type: stat_u2
+      - id: attack
+        type: u4
+      - id: left_hand_attack
+        type: u4
+      - id: right_hand_attack
+        type: u4
+      - id: defense
+        type: stat_d
+      - id: spell_atk
+        type: stat_d
+      - id: spell_defense
+        type: stat_d
+      - id: rigor
+        type: stat_l
+      - id: agility
+        type: stat_l
+      - id: critical
+        type: stat_l
+      - id: stamina
+        type: stat_l
+      - id: soul_defense
+        type: stat_l
+      - id: unkunk
+        type: stat_l
+      - id: thunder
+        type: elemental
+      - id: fire
+        type: elemental
+      - id: ice
+        type: elemental
+      - id: rotten
+        type: elemental
+      - id: s_1
+        type: elemental
+      - id: weight
+        type: stat_u4
+  stat_u8:
+    seq:
+      - id: max
+        type: u8
+      - id: cur
+        type: u8
+  stat_d:
+    seq:
+      - id: base
+        type: u4
+      - id: bonus
+        type: u4
+  stat_l:
+    seq:
+      - id: base
+        type: u2
+      - id: bonus
+        type: u2
+  elemental:
+    seq:
+      - id: defense
+        type: u2
+      - id: attack
+        type: u2
+  stat_u4:
+    seq:
+      - id: cur
+        type: u4
+      - id: max
+        type: u4
+  stat_u2:
+    seq:
+      - id: cur
+        type: u2
+      - id: max
+        type: u2
+  position: # Low presicion
+    seq:
+      - id: orientation
+        type: u4
+      - id: x
+        type: u4
+      - id: y
+        type: u4
+  attributes:
+    seq:
+      - id: shape
+        type: u1
+      - id: hair_style
+        type: u1
+      - id: height
+        type: u1
+      - id: hair_color
+        type: u1
+      - id: skin_color
+        type: u1

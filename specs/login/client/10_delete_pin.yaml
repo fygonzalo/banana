@@ -1,0 +1,6 @@
+meta:
+  id: client_delete_pin
+  endian: le
+seq:
+  - id: pin
+    size: 33

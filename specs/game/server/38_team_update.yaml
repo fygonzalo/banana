@@ -1,0 +1,12 @@
+meta:
+  id: team_update
+  endian: le
+seq:
+  - id: peer_id
+    type: u4
+  - id: unk1
+    size: 4
+  - id: nick
+    type: strz
+    size: 17
+    encoding: ISO-8859-1

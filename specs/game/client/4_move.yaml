@@ -1,0 +1,17 @@
+meta:
+  id: move
+  endian: le
+seq:
+  - id: src
+    type: position
+  - id: unk
+    size: 3
+  - id: dst
+    type: position
+types:
+  position:
+    seq:
+      - id: x
+        type: u2
+      - id: y
+        type: u2

@@ -1,0 +1,7 @@
+meta:
+  id: message
+  endian: le
+seq:
+  - id: message
+    type: strz
+    encoding: ISO-8859-1

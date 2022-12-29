@@ -1,0 +1,6 @@
+meta:
+  id: client_recover_char
+  endian: le
+seq:
+  - id: unk0 #probably char no
+    size: 1

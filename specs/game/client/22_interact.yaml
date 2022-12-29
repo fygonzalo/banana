@@ -1,0 +1,8 @@
+meta:
+  id: interact
+  endian: le
+seq:
+  - id: code # 54 = Daily reward - Target = 1, 2, 3 = days | 53 = Online reward
+    type: u1
+  - id: target
+    type: u4

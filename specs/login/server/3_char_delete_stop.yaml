@@ -1,0 +1,8 @@
+meta:
+  id: server_char_delete_stop
+  endian: le
+seq:
+  - id: unk1
+    size: 2
+  - id: char_id
+    type: u4

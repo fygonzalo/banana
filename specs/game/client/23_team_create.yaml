@@ -1,0 +1,10 @@
+meta:
+  id: team_create
+  endian: le
+seq:
+  - id: nick
+    type: strz
+    size: 17
+    encoding: ISO-8859-1
+  - id: type
+    type: u1 # Share Alone

@@ -1,0 +1,18 @@
+meta:
+  id: friend_connected
+  endian: le
+seq:
+  - id: my_id
+    type: u4
+  - id: unk
+    size: 1
+  - id: title
+    type: strz
+    size: 12
+    encoding: ISO-8859-1
+  - id: unk1
+    size: 49
+  - id: nick
+    type: strz
+    size: 17
+    encoding: ISO-8859-1

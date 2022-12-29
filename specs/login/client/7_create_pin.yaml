@@ -1,0 +1,12 @@
+meta:
+  id: client_create_pin
+  endian: le
+seq:
+  - id: password #md5
+    type: strz
+    size: 33
+    encoding: ISO-8859-1
+  - id: pin
+    type: strz #md5
+    size: 33
+    encoding: ISO-8859-1

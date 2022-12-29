@@ -1,0 +1,81 @@
+meta:
+  id: spawn_player
+  endian: le
+seq:
+  - id: entity_id
+    type: u4
+  - id: position
+    type: position
+  - id: nick
+    type: strz
+    size: 17
+    encoding: ISO-8859-1
+  - id: title
+    type: strz
+    encoding: ISO-8859-1
+    size: 12
+  - id: unk2
+    size: 6
+  - id: model
+    type: u4
+  - id: attributes
+    type: attributes
+  - id: faction
+    type: u1
+  - id: unk3
+    size: 1
+  - id: team_like
+    type: u2
+  - id: equip
+    type: equip
+  - id: unknonn
+    size: 13
+  - id: league
+    type: league
+types:
+  league:
+    seq:
+      - id: badge
+        type: u1
+      - id: name
+        type: strz
+        size: 12
+        encoding: ISO-8859-1
+  attributes:
+    seq:
+      - id: shape
+        type: u1
+      - id: hair_style
+        type: u1
+      - id: height
+        type: u1
+      - id: hair_color
+        type: u1
+      - id: skin_color
+        type: u1
+  position: # Low presicion
+    seq:
+      - id: orientation
+        type: u4
+      - id: x
+        type: u4
+      - id: y
+        type: u4
+  equip:
+    seq:
+      - id: head
+        type: u4
+      - id: body
+        type: u4
+      - id: right_hand
+        type: u4
+      - id: left_hand
+        type: u4
+      - id: gloves
+        type: u4
+      - id: feet
+        type: u4
+      - id: back
+        type: u4
+      - id: ride
+        type: u4

@@ -1,0 +1,27 @@
+meta:
+  id: friend_list
+  endian: le
+seq:
+  - id: char_id
+    type: u4
+  - id: list
+    type: list
+types:
+  friend:
+    seq:
+      - id: id
+        type: u4
+      - id: nick
+        type: strz
+        size: 17
+        encoding: ISO-8859-1
+      - id: unk_1
+        size: 21
+  list:
+    seq:
+      - id: count
+        type: u4
+      - id: friends
+        type: friend
+        repeat: expr
+        repeat-expr: count

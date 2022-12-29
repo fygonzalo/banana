@@ -1,0 +1,8 @@
+meta:
+  id: item_equip
+  endian: le
+seq:
+  - id: bag_slot
+    type: u2
+  - id: equip_slot
+    type: u2

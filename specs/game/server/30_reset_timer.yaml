@@ -1,0 +1,8 @@
+meta:
+  id: reset_timer
+  endian: le
+seq:
+  - id: base
+    type: u2
+  - id: unk
+    type: u2

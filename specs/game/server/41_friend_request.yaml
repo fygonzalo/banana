@@ -1,0 +1,12 @@
+meta:
+  id: friend_request
+  endian: le
+seq:
+  - id: my_id
+    type: u4
+  - id: unk
+    size: 2
+  - id: nick
+    type: strz
+    size: 17
+    encoding: ISO-8859-1

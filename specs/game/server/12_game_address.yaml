@@ -1,0 +1,16 @@
+meta:
+  id: game_address
+  endian: le
+seq:
+  - id: stage
+    type: u2
+  - id: unk1
+    size: 2
+  - id: port
+    type: u2
+  - id: ip
+    type: strz
+    encoding: ISO-8859-1
+    size: 15
+  - id: unk2
+    size: 6

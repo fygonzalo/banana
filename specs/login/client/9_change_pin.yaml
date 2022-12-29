@@ -1,0 +1,12 @@
+meta:
+  id: client_change_pin
+  endian: le
+seq:
+  - id: old #md5
+    type: strz
+    size: 33
+    encoding: ISO-8859-1
+  - id: new #md5
+    type: strz
+    size: 33
+    encoding: ISO-8859-1

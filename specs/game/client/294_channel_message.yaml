@@ -1,0 +1,13 @@
+meta:
+  id: channel_message
+  endian: le
+seq:
+  - id: unk1
+    type: u4
+  - id: channel # 1 general, 2 public, 3 trade, 4 team, 5 league
+    type: u1
+  - id: unk2
+    type: u4
+  - id: message
+    type: strz
+    encoding: ISO-8859-1

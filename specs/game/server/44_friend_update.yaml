@@ -1,0 +1,10 @@
+meta:
+  id: friend_update
+  endian: le
+seq:
+  - id: my_id
+    type: u4
+  - id: unk
+    size: 25
+  - id: status
+    type: u4

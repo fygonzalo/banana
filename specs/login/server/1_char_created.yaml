@@ -1,0 +1,95 @@
+meta:
+  id: char_created
+  endian: le
+seq:
+  - id: flag
+    type: u2
+  - id: character
+    type: char
+  - id: miscs
+    type: miscs
+types:
+  miscs:
+    seq:
+      - id: month
+        type: u1
+      - id: day
+        type: u1
+      - id: blood_type
+        type: u1
+  equip:
+    seq:
+      - id: head
+        type: u4
+      - id: body
+        type: u4
+      - id: right_hand
+        type: u4
+      - id: left_hand
+        type: u4
+      - id: gloves
+        type: u4
+      - id: feet
+        type: u4
+      - id: back
+        type: u4
+      - id: ride
+        type: u4
+  attributes:
+    seq:
+      - id: shape
+        type: u1
+      - id: hair_style
+        type: u1
+      - id: height
+        type: u1
+      - id: hair_color
+        type: u1
+      - id: skin_color
+        type: u1
+  stats:
+    seq:
+      - id: remaining_hp
+        type: u4
+      - id: unk_1
+        type: u4
+      - id: remaining_mp
+        type: u4
+      - id: unk_2
+        type: u4
+  char:
+    seq:
+      - id: unk_1
+        type: u1
+      - id: level
+        type: u4
+      - id: faction
+        type: u1
+      - id: attributes
+        type: attributes
+      - id: stage
+        type: u4
+      - id: unk_2
+        size: 16
+      - id: char_id
+        type: u4
+      - id: nickname
+        type: strz
+        size: 17
+        encoding: ISO-8859-1
+      - id: acc_id
+        type: u4
+      - id: username
+        type: strz
+        encoding: ISO-8859-1
+        size: 21
+      - id: equip
+        type: equip
+      - id: stats
+        type: stats
+      - id: title
+        type: strz
+        encoding: ISO-8859-1
+        size: 12
+      - id: unk5
+        size: 5
