@@ -3,7 +3,9 @@ meta:
   endian: le
 seq:
   - id: unk1
-    size: 2
+    type: u1
+  - id: branch_index
+    type: u1
   - id: pin
     type: strz
     size: 33

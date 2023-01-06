@@ -1,5 +1,5 @@
 meta:
-  id: sync
+  id: sync_client
   endian: le
 seq:
   - id: delta

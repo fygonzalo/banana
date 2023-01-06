@@ -67,7 +67,7 @@ parsers:
   - name: Message
     when: type == Game and sender == Client and code == 14
     file: specs/game/client/14_message.yaml
-  - name: Sync
+  - name: Sync client
     when: type == Game and sender == Client and code == 15
     file: specs/game/client/15_sync.yaml
   - name: Equip item
