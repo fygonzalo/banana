@@ -1,0 +1,7 @@
+meta:
+  id: choose_class
+  endian: le
+seq:
+  - id: skills
+    type: u1
+    repeat: 9

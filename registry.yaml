@@ -100,6 +100,9 @@ parsers:
   - name: Item split
     when: type == Game and sender == Client and code == 47
     file: specs/game/client/47_item_split.yaml
+  - name: Set shortcut
+    when: type == Game and sender == Client and code == 68
+    file: specs/game/client/68_set_shortcut.yaml
   - name: Channel message
     when: type == Game and sender == Client and code == 294
     file: specs/game/client/294_channel_message.yaml
@@ -203,9 +206,18 @@ parsers:
   - name: Load bank
     when: type == Game and sender == Server and code == 78
     file: specs/game/server/78_load_bank.yaml
+  - name: Load guild bank
+    when: type == Game and sender == Server and code == 89
+    file: specs/game/server/89_load_guild_bank.yaml
+  - name: Spell Bar
+    when: type == Game and sender == Server and code == 91
+    file: specs/game/server/91_spell_bar.yaml
   - name: Item mall
     when: type == Game and sender == Server and code == 95
     file: specs/game/server/95_store.yaml
+  - name: Eshop items
+    when: type == Game and sender == Server and code == 97
+    file: specs/game/server/97_eshop_items.yaml
   - name: Whisper
     when: type == Game and sender == Server and code == 295
     file: specs/game/server/295_whisper.yaml

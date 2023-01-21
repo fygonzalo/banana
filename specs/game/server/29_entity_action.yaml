@@ -4,25 +4,58 @@ meta:
 seq:
   - id: target
     type: u4
-  - id: unk1
+  - id: count
     type: u1
-  - id: action
-    type: u1
-  - id: arguments # 10 = ride
-    type:
-      switch-on: action
-      cases:
-        1: equip
-        3: cooldown
-        4: buff
-        53: unk
-        _: dummy
+  - id: actions
+    repeat: expr
+    repeat-expr: count
+    type: action
 types:
+  action:
+    seq:
+    - id: code
+      type: u1
+    - id: arguments # 10 = ride
+      type:
+        switch-on: code
+        cases:
+          1: equip
+          3: cooldown
+          4: buff
+          #5: progress_bar
+          #6: emotes
+          #9 01 01, 02, 01, 03, 01
+          #10: change_skill
+          #12: choose_profession
+          #17: pet_attack
+          #19: server_will_close
+          #20: league_Create
+          #22: ko #?
+          #23: pet_stat_increaase
+          #25: ko2 #? 
+          #26: ranking
+          #38: battlefield_counter
+          #43: hall_of_fame
+          #52: attrib_improv
+          #53: unk
+          #55: achievmenets
+          #65: glow?
+          #66: crash
+          #94: crash
+          #99: crash
+          #105: crash
+          _: dummy
   cooldown:
     seq:
     - id: object
       type: u4
     - id: time
+      type: u4
+  emotes:
+    seq:
+    - id: position
+      type: u4
+    - id: emote
       type: u4
   equip:
     seq:

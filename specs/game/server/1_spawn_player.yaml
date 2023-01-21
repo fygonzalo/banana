@@ -4,6 +4,8 @@ meta:
 seq:
   - id: entity_id
     type: u4
+  - id: unk_000
+    type: u4
   - id: position
     type: position
   - id: nick
@@ -13,10 +15,12 @@ seq:
   - id: title
     type: strz
     encoding: ISO-8859-1
-    size: 12
+    size: 13
   - id: unk2
-    size: 6
-  - id: model
+    size: 4
+  - id: orientation
+    type: u1
+  - id: shape
     type: u4
   - id: attributes
     type: attributes
@@ -28,10 +32,20 @@ seq:
     type: u2
   - id: equip
     type: equip
-  - id: unknonn
-    size: 13
+  - id: unkun
+    type: u4
+  - id: overlay
+    type: u2
+  - id: unkunk
+    type: u2
+  - id: quest_title
+    type: u2
+  - id: unknunk3
+    size: 3
   - id: league
     type: league
+  - id: unununu
+    size: 6
 types:
   league:
     seq:
@@ -43,7 +57,7 @@ types:
         encoding: ISO-8859-1
   attributes:
     seq:
-      - id: shape
+      - id: gender
         type: u1
       - id: hair_style
         type: u1
@@ -55,8 +69,6 @@ types:
         type: u1
   position: # Low presicion
     seq:
-      - id: orientation
-        type: u4
       - id: x
         type: u4
       - id: y

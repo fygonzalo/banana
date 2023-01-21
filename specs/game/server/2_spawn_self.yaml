@@ -38,6 +38,30 @@ seq:
     type: skill
     repeat: expr
     repeat-expr: 36
+  - id: spells
+    size: 1024
+  - id: crowns
+    size: 129
+  - id: unknono
+    type: u4
+  - id: recipes
+    size: 469
+  - id: unknown
+    size: 1579
+  - id: unkdsa
+    size: 12
+  - id: trade_pass
+    type: u1
+  - id: unknono31321
+    size: 21
+  - id: cards
+    size: 45
+  - id: udasdasd
+    size: 83
+  - id: cardsets
+    size: 11
+  - id: usdasda
+    size: 22
 types:
   rank:
     seq:

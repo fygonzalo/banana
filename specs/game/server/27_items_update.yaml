@@ -4,25 +4,57 @@ meta:
 seq:
   - id: count
     type: u4
-  - id: item
-    type: item
+  - id: items
+    type: operation
+    repeat: expr
+    repeat-expr: count
 types:
-  item:
+  operation:
     seq:
-      - id: header
-        type: header
-      - id: length
+    - id: code
+      type: u1
+    - id: body
+      type:
+        switch-on: code
+        cases:
+          1: add
+          2: remove
+  remove:
+    seq:
+      - id: one
         type: u1
-      - id: footer
-        type: footer
-      - id: unk4
-        type: u1
+      - id: holder
+        type: u4
+      - id: slot
+        type: u2
+  add:
+    seq:
+      - id: id
+        type: u4
+      - id: timestamp
+        type: u4
+      - id: code
+        type: u4
+      - id: bonus
+        type: u4
         repeat: expr
-        repeat-expr: length
-  footer:
-    seq:
-      - id: zero
+        repeat-expr: 5
+      - id: inventory_type
         type: u1
+      - id: holder
+        type: u4
+      - id: slot_id
+        type: u2
+      - id: quantity
+        type: u4
+      - id: unk322
+        type: u1
+      - id: hardiness
+        type: u2
+      - id: timer
+        type: u4
+      - id: length
+        type: u2
       - id: owner
         type: u4
       - id: rests
@@ -37,37 +69,13 @@ types:
         repeat-expr: 5
       - id: stone_count
         type: u1
-      - id: enhace_count
+      - id: piercings_count
         type: u1
-      - id: unk2
-        type: u2
+      - id: intencifications_count
+        type: u1
       - id: unk3
-        type: u1
-  header:
-    seq:
-      - id: one
-        type: u1
-      - id: unk_id
         type: u2
-      - id: unk2
-        size: 6
-      - id: item_id
-        type: u4
-      - id: bonus
-        type: u4
+      - id: extension
+        type: u1
         repeat: expr
-        repeat-expr: 5
-      - id: two # crashes when not 1
-        type: u1
-      - id: holder
-        type: u4
-      - id: slot_id
-        type: u2
-      - id: quantity
-        type: u4
-      - id: unk3
-        type: u1
-      - id: hardiness
-        type: u2
-      - id: timer
-        type: u4
+        repeat-expr: length

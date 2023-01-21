@@ -1,0 +1,17 @@
+meta:
+  id: spell_bar
+  endian: le
+seq:
+  - id: elements
+    type: el
+    repeat: expr
+    repeat-expr: 24
+types:
+  el:
+    seq:
+    - id: type
+      type: u1
+    - id: code # 1 spell, 2 consumable, 3 emote, 4 item
+      type: u4
+    - id: unk
+      type: u4

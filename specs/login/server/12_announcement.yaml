@@ -2,8 +2,8 @@ meta:
   id: announcement
   endian: le
 seq:
-  - id: unk1
-    size: 4
+  - id: timestamp
+    type: u4
   - id: length # Related to 2_gc_auth_info. Not confirmed.
     type: u4
   - id: message # Seems to be 2. Related to client "state machine"?

@@ -2,7 +2,7 @@ meta:
   id: auth_request
   endian: le
 seq:
-  - id: unk1 # Related to network connection?
+  - id: version # Related to network connection?
     size: 17
   - id: account_id
     type: u4

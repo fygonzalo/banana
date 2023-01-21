@@ -1,0 +1,12 @@
+meta:
+  id: set_shortcut
+  endian: le
+seq:
+  - id: page
+    type: u1
+  - id: slot
+    type: u1
+  - id: spell
+    type: u4
+  - id: unknonw
+    size: 5

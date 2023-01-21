@@ -5,55 +5,19 @@ seq:
   - id: count
     type: u4
   - id: items
-    type: item
+    type: add
     repeat: expr
     repeat-expr: count
 types:
-  item:
+  add:
     seq:
-      - id: header
-        type: header
-      - id: length
+      - id: add
         type: u1
-      - id: footer
-        type: footer
-      - id: unk4
-        type: u1
-        repeat: expr
-        repeat-expr: length
-  footer:
-    seq:
-      - id: zero
-        type: u1
-      - id: owner
+      - id: id
         type: u4
-      - id: rests
-        type: u1
-      - id: flags # 1 means have rests
-        type: u1
-      - id: unkunkunk
-        size: 2
-      - id: stones_id
+      - id: timestamp
         type: u4
-        repeat: expr
-        repeat-expr: 5
-      - id: stone_count
-        type: u1
-      - id: enhace_count
-        type: u1
-      - id: unk2
-        type: u2
-      - id: unk3
-        type: u1
-  header:
-    seq:
-      - id: one
-        type: u1
-      - id: unk_id
-        type: u2
-      - id: unk2
-        size: 6
-      - id: item_id
+      - id: code
         type: u4
       - id: bonus
         type: u4
@@ -67,9 +31,35 @@ types:
         type: u2
       - id: quantity
         type: u4
-      - id: unk3
+      - id: unk322
         type: u1
       - id: hardiness
         type: u2
       - id: timer
         type: u4
+      - id: length
+        type: u2
+      - id: owner
+        type: u4
+      - id: rests
+        type: u1
+      - id: flags # 1 means have rests
+        type: u1
+      - id: unkunkunk
+        size: 2
+      - id: stones_id
+        type: u4
+        repeat: expr
+        repeat-expr: 5
+      - id: unununun
+        type: u1
+      - id: piercings_count
+        type: u1
+      - id: intencifications_count
+        type: u1
+      - id: unk3
+        type: u2
+      - id: extension
+        type: u1
+        repeat: expr
+        repeat-expr: length

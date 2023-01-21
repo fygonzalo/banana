@@ -1,12 +1,71 @@
 meta:
-  id: item_consume
+  id: item_create
   endian: le
 seq:
-  - id: unk
+  - id: type
     type: u1
-  - id: bag_slot_source
-    type: u2
-  - id: bag_slot_dest
-    type: u2
-  - id: quantity
-    type: u4
+  - id: body
+    type:
+      switch-on: type
+      cases:
+        11: split
+        14: bank_move
+        15: bank_split
+        16: bank_to_inventory
+        17: inventory_to_bank
+        19: bank_delete
+        22: mall
+  
+types:
+  split:
+    seq:
+    - id: destination
+      type: u2
+    - id: source
+      type: u2
+    - id: quantity
+      type: u4
+  bank_move:
+    seq:
+    - id: source
+      type: u2
+    - id: unk
+      type: u2
+    - id: destination
+      type: u2
+    - id: unknun
+      type: u2
+  bank_split:
+    seq:
+    - id: destination
+      type: u2
+    - id: source
+      type: u2
+    - id: quantity
+      type: u4
+  bank_to_inventory:
+    seq:
+    - id: source
+      type: u4
+    - id: unknown
+      type: u4
+  inventory_to_bank:
+    seq:
+    - id: source
+      type: u4
+    - id: unknown
+      type: u4
+  bank_delete:
+    seq:
+    - id: unknown
+      type: u4
+    - id: slot
+      type: u4
+  mall:
+    seq:
+    - id: id
+      type: u4
+    - id: bag_slot_dest
+      type: u2
+    - id: unk
+      type: u2

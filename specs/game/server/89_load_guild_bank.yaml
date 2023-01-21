@@ -1,5 +1,5 @@
 meta:
-  id: load_bank
+  id: load_guild_bank
   endian: le
 seq:
   - id: count
@@ -7,7 +7,7 @@ seq:
   - id: items
     type: add
     repeat: expr
-    repeat-expr: 74
+    repeat-expr: 26
 types:
   add:
     seq:

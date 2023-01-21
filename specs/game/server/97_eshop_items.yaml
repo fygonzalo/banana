@@ -1,0 +1,21 @@
+meta:
+  id: eshop_items
+  endian: le
+seq:
+  - id: count
+    type: u1
+  - id: items
+    type: item
+    repeat: expr
+    repeat-expr: count
+types:
+  item:
+    seq:
+      - id: id
+        type: u4
+      - id: code
+        type: u4
+      - id: one
+        type: u4
+      - id: unk
+        size: 21
