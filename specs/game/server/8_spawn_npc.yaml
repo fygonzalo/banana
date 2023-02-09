@@ -1,5 +1,5 @@
 meta:
-  id: spawn_object
+  id: spawn_npc
   endian: le
 seq:
   - id: entity_id

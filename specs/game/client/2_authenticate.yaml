@@ -1,8 +1,8 @@
 meta:
-  id: auth_request
+  id: authenticate
   endian: le
 seq:
-  - id: version # Related to network connection?
+  - id: version
     size: 17
   - id: account_id
     type: u4
@@ -10,5 +10,5 @@ seq:
     type: u4
   - id: stage
     type: u4
-  - id: session_id # not confirmed
+  - id: session_id
     type: u4

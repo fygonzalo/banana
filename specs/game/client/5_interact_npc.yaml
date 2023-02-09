@@ -1,0 +1,8 @@
+meta:
+  id: interact_npc
+  endian: le
+seq:
+  - id: entityid
+    type: u4
+  - id: unknown
+    type: u2

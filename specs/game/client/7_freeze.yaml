@@ -1,0 +1,6 @@
+meta:
+  id: freeze
+  endian: le
+seq:
+  - id: reason
+    type: u1

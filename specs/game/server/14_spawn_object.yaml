@@ -1,0 +1,16 @@
+meta:
+  id: spawn_object
+  endian: le
+seq:
+  - id: entity_id
+    type: u4
+  - type: u4
+  - id: position
+    type: position
+types:
+  position: # Low presicion
+    seq:
+      - id: x
+        type: u4
+      - id: y
+        type: u4

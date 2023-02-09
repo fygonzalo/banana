@@ -55,15 +55,21 @@ parsers:
     when: type == Login and sender == Server and code == 12 
     file: specs/login/server/12_announcement.yaml
   # Game Client
-  - name: Auth request
+  - name: Authenticate
     when: type == Game and sender == Client and code == 2
-    file: specs/game/client/2_auth_request.yaml
+    file: specs/game/client/2_authenticate.yaml
   - name: Move
     when: type == Game and sender == Client and code == 4
     file: specs/game/client/4_move.yaml
+  - name: Interact NPC
+    when: type == Game and sender == Client and code == 5
+    file: specs/game/client/5_interact_npc.yaml
   - name: Cast
     when: type == Game and sender == Client and code == 6
     file: specs/game/client/6_cast.yaml
+  - name: Freeze
+    when: type == Game and sender == Client and code == 7
+    file: specs/game/client/7_freeze.yaml
   - name: Message
     when: type == Game and sender == Client and code == 14
     file: specs/game/client/14_message.yaml
@@ -110,9 +116,12 @@ parsers:
     when: type == Game and sender == Client and code == 295
     file: specs/game/client/295_whisper.yaml
   # Game Server
-  - name: Spawn player
+  - name: Spawn character
+    when: type == Game and sender == Server and code == 0
+    file: specs/game/server/0_error.yaml
+  - name: Spawn character
     when: type == Game and sender == Server and code == 1
-    file: specs/game/server/1_spawn_player.yaml
+    file: specs/game/server/1_spawn_character.yaml
   - name: Spawn self
     when: type == Game and sender == Server and code == 2
     file: specs/game/server/2_spawn_self.yaml
@@ -127,7 +136,7 @@ parsers:
     file: specs/game/server/7_remove_entity.yaml
   - name: Spawn entity
     when: type == Game and sender == Server and code == 8
-    file: specs/game/server/8_spawn_object.yaml
+    file: specs/game/server/8_spawn_npc.yaml
   - name: Attack
     when: type == Game and sender == Server and code == 10
     file: specs/game/server/10_attack.yaml
@@ -140,9 +149,15 @@ parsers:
   - name: System log
     when: type == Game and sender == Server and code == 13
     file: specs/game/server/13_system_log.yaml
+  - name: Spawn object
+    when: type == Game and sender == Server and code == 14
+    file: specs/game/server/14_spawn_object.yaml
   - name: Cast
     when: type == Game and sender == Server and code == 17
     file: specs/game/server/17_cast.yaml
+  - name: Show dialog
+    when: type == Game and sender == Server and code == 18
+    file: specs/game/server/18_show_dialog.yaml
   - name: Update object
     when: type == Game and sender == Server and code == 19
     file: specs/game/server/19_update_object.yaml

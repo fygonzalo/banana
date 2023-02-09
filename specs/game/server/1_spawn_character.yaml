@@ -1,14 +1,14 @@
 meta:
-  id: spawn_player
+  id: spawn_character
   endian: le
 seq:
-  - id: entity_id
+  - id: id
     type: u4
-  - id: unk_000
+  - id: status
     type: u4
   - id: position
     type: position
-  - id: nick
+  - id: name
     type: strz
     size: 17
     encoding: ISO-8859-1
@@ -16,36 +16,30 @@ seq:
     type: strz
     encoding: ISO-8859-1
     size: 13
-  - id: unk2
-    size: 4
+  - type: u4
   - id: orientation
     type: u1
-  - id: shape
+  - id: model
     type: u4
   - id: attributes
     type: attributes
   - id: faction
     type: u1
-  - id: unk3
-    size: 1
-  - id: team_like
+  - type: u1
+  - id: team
     type: u2
-  - id: equip
-    type: equip
-  - id: unkun
-    type: u4
+  - id: equipment
+    type: equipment
+  - type: u4
   - id: overlay
     type: u2
-  - id: unkunk
+  - type: u2
+  - id: crown_title
     type: u2
-  - id: quest_title
-    type: u2
-  - id: unknunk3
-    size: 3
+  - size: 3
   - id: league
     type: league
-  - id: unununu
-    size: 6
+  - size: 6
 types:
   league:
     seq:
@@ -73,7 +67,7 @@ types:
         type: u4
       - id: y
         type: u4
-  equip:
+  equipment:
     seq:
       - id: head
         type: u4

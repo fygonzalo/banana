@@ -10,8 +10,28 @@ seq:
     type: strz
     size: 12
     encoding: ISO-8859-1
-  - id: unk1
-    size: 49
+  - size: 9
+  - id: id
+    type: u4
+  - size: 4
+  - id: month
+    type: u1
+  - id: day
+    type: u1
+  - size: 6
+  - id: level
+    type: u4
+  - id: faction
+    type: u1
+  - id: job
+    type: u1
+  - id: rank
+    type: u1
+  - id: league
+    type: strz
+    encoding: ISO-8859-1
+    size: 13
+  - type: u4
   - id: nick
     type: strz
     size: 17

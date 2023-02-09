@@ -1,0 +1,6 @@
+meta:
+  id: error
+  endian: le
+seq:
+  - id: message
+    type: u4

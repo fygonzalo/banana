@@ -1,0 +1,24 @@
+meta:
+  id: show_dialog
+  endian: le
+seq:
+  - id: messageid
+    type: u4
+  - size: 2
+  - id: count_args
+    type: u1
+  - id: count_options
+    type: u2
+  - id: options
+    type: u4
+    repeat: expr
+    repeat-expr: count_options
+  - id: next
+    type: u4
+    repeat: expr
+    repeat-expr: count_options
+  - id: args
+    type: strz
+    encoding: ISO-8859-1
+    repeat: expr
+    repeat-expr: count_args

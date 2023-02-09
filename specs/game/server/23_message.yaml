@@ -2,9 +2,9 @@ meta:
   id: message
   endian: le
 seq:
-  - id: entity_id
+  - id: entityid
     type: u4
-  - id: nick
+  - id: name
     type: strz
     size: 17
     encoding: ISO-8859-1

@@ -2,11 +2,11 @@ meta:
   id: spawn_self
   endian: le
 seq:
-  - id: entity_id
+  - id: id
     type: u4
   - id: position
     type: position
-  - id: nick
+  - id: name
     type: strz
     size: 17
     encoding: ISO-8859-1
@@ -14,16 +14,16 @@ seq:
     type: strz
     encoding: ISO-8859-1
     size: 13
-  - id: unk2
-    size: 5
+  - type: u4
+  - id: orientation
+    type: u1
   - id: model
     type: u4
   - id: attributes
     type: attributes
   - id: faction
     type: u1
-  - id: unk4
-    size: 4
+  - size: 4
   - id: level
     type: u4
   - id: experience
@@ -32,7 +32,7 @@ seq:
     type: rank
   - id: stats
     type: stats
-  - id: char_id
+  - id: character_id
     type: u4
   - id: skills
     type: skill
@@ -42,26 +42,20 @@ seq:
     size: 1024
   - id: crowns
     size: 129
-  - id: unknono
-    type: u4
+  - type: u4
   - id: recipes
     size: 469
-  - id: unknown
-    size: 1579
-  - id: unkdsa
-    size: 12
+  - size: 1579
+  - size: 12
   - id: trade_pass
     type: u1
-  - id: unknono31321
-    size: 21
+  - size: 21
   - id: cards
     size: 45
-  - id: udasdasd
-    size: 83
+  - size: 83
   - id: cardsets
     size: 11
-  - id: usdasda
-    size: 22
+  - size: 22
 types:
   rank:
     seq:
