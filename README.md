@@ -1,5 +1,12 @@
+# Flows
+- Login Server
+    - [Authentication](#authentication-login-server)
+- Game Server
+    - [Authentication](#authentication-game-server)
+    - [Disconnection](#disconnection-game-server)
 
-# Authentication (login server)
+
+## Authentication (login server)
 ```mermaid
 sequenceDiagram
     participant Client
@@ -10,7 +17,7 @@ sequenceDiagram
     Login server-)Client: [0] Authentication error (152)
     Login server-)Client: FIN
     end
-    break account logged in
+    break account is logged in
     Login server-)Client: [0] Authentication error (161)
     Login server-)Client: FIN
     alt on login server
@@ -26,7 +33,7 @@ sequenceDiagram
     Login server-)Client: [0] Character list
 ```
 
-# Authentication (game server)
+## Authentication (game server)
 ```mermaid
 sequenceDiagram
     participant Client
@@ -37,6 +44,12 @@ sequenceDiagram
     break invalid data
     Game server-)Client: [0] Error (167)
     Game server-)Client: FIN
+    end
+    opt is in league
+    Game server-)Other client: [292] Member detail
+    end
+    opt is in area of interest
+    Game server-)Other client: [1] Player
     end
     opt is friend
     Game server-)Other client: [40] Friend detail
@@ -65,3 +78,23 @@ sequenceDiagram
 ```
 
 
+## Disconnection (game server)
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    participant Other client
+    Game server-)Client: FIN
+    opt is in area of interest
+    Game server-)Other client: [7] Remove entity (1)
+    end
+    opt is in team
+    Game server-)Other client: [37] Leaves team (4)
+    end
+    opt is in league
+    Game server-)Other client: [293] Member disconnected
+    end
+    opt is friend
+    Game server-)Other client: [46] Friend disconnected
+    end
+```
