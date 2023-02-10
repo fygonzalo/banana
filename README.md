@@ -1,12 +1,23 @@
-# Flows
-- Login Server
-    - [Authentication](#authentication-login-server)
-- Game Server
-    - [Authentication](#authentication-game-server)
-    - [Disconnection](#disconnection-game-server)
+# Sequences diagrams
+The number between brackets represents the message code. Some messages have a value between parentheses at the end, that represents an internal code/value for that message.
 
+- [Login Server](#login-server)
+    - [Authentication](#authentication)
+        - [Login](#login)
+- [Game Server](#game-server)
+    - [Authentication](#authentication-1)
+        - [Login](#login-1)
+        - [Logout](#logout)
+    - [Switch to stage on same server](#switch-to-stage-on-same-server)
+        - [Disconnect](#disconnect)
+        - [Connect](#connect)
+    - [Switch to stage on different server](#switch-to-stage-on-different-server)
+        - [Disconnect](#disconnect-1)
+        - [Connect](#disconnect-1)
 
-## Authentication (login server)
+# Login server
+## Authentication
+### Login
 ```mermaid
 sequenceDiagram
     participant Client
@@ -32,8 +43,9 @@ sequenceDiagram
     end
     Login server-)Client: [0] Character list
 ```
-
-## Authentication (game server)
+# Game server
+## Authentication
+### Login
 ```mermaid
 sequenceDiagram
     participant Client
@@ -78,7 +90,7 @@ sequenceDiagram
 ```
 
 
-## Disconnection (game server)
+### Logout
 ```mermaid
 sequenceDiagram
     participant Client
@@ -97,4 +109,93 @@ sequenceDiagram
     opt is friend
     Game server-)Other client: [46] Friend disconnected
     end
+```
+---
+## Switch to stage on same server
+### Disconnect
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    participant Other client
+    Game server-)Client: [12] Redirect to server (only stage is set)
+    opt is in area of interest
+    Game server-)Other client: [7] Remove entity
+    end
+```
+### Connect
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    participant Other client
+    Client-)Game server: [9] Empty message
+    Game server-)Client: [20] Unknown message
+    Game server-)Client: [2] Character
+    Game server-)Client: [92] Acquired emotes
+    Game server-)Client: [91] Function bar
+    Game server-)Client: [26] Inventory
+    loop entities
+    Game server-)Client: [1] Player
+    Game server-)Client: [8] NPC
+    Game server-)Client: [14] Object
+    end
+    loop entities dynamic state
+    Game server-)Client: [29] Update
+    end
+    Game server-)Client: [341] Achievements
+    Game server-)Client: [329] House information
+    opt is in area of interest
+    Game server-)Other client: [1] Player
+    end
+
+```
+---
+## Switch to stage on different server
+### Disconnect
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    participant Other client
+    Game server-)Client: [12] Redirect to server
+    Client-)Game server: [232] Empty message
+    Game server-)Client: FIN
+    opt is in area of interest
+    Game server-)Other client: [7] Remove entity
+    end
+```
+
+### Connect
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    participant Other client
+    Client-)Game server: [2] Authenticate
+    Client-)Game server: [3] Empty message
+    opt is in area of interest
+    Game server-)Other client: [1] Player
+    end
+    opt is friend
+    Game server-)Other client: [40] Friend detail
+    end
+    Game server-)Client: [2] Character
+    Game server-)Client: [91] Function bar
+    Game server-)Client: [26] Inventory
+    loop entities
+    Game server-)Client: [1] Player
+    Game server-)Client: [8] NPC
+    Game server-)Client: [14] Object
+    end
+    loop entities dynamic state
+    Game server-)Client: [29] Update
+    end
+    Game server-)Client: [39] Friends
+    loop connected friends
+    Game server-)Client: [40] Friend detail
+    end
+    Game server-)Client: [341] Achievements
+    Game server-)Client: [329] House information
+    Game server-)Client: [366] Online reward
 ```
