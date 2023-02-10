@@ -290,8 +290,8 @@ sequenceDiagram
     participant Game server
     participant Other client
     Client-)Game server: [46] Use item in slot
-    Game server-)Client: [66] Update stats
     Game server-)Client: [27] Update slot (src)
+    Game server-)Client: [66] Update stats
     opt is in area of interest
     Game server-)Other client: [29] Update entity (4)
     end
