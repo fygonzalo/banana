@@ -23,6 +23,8 @@ The number between brackets represents the message code. Some messages have a va
         - [Use (consumables)](#use-consumables)
     - [Interactions](#interactions)
         - [Talk to NPC](#talk-to-npc)
+        - [Get HP](#get-hp)
+        - [Attack](#attack)
 # Login server
 ## Authentication
 ### Login
@@ -84,7 +86,7 @@ sequenceDiagram
     Game server-)Client: [14] Object
     end
     loop entities dynamic state
-    Game server-)Client: [29] Update entity
+    Game server-)Client: [29] Update player
     end
     Game server-)Client: [92] Acquired emotes
     Game server-)Client: [305] Leagues territories
@@ -149,7 +151,7 @@ sequenceDiagram
     Game server-)Client: [14] Object
     end
     loop entities dynamic state
-    Game server-)Client: [29] Update entity
+    Game server-)Client: [29] Update player
     end
     Game server-)Client: [341] Achievements
     Game server-)Client: [329] House information
@@ -189,6 +191,7 @@ sequenceDiagram
     Game server-)Other client: [40] Friend detail
     end
     Game server-)Client: [2] Character
+    Game server-)Client: [92] Acquired emotes
     Game server-)Client: [91] Function bar
     Game server-)Client: [26] Inventory
     loop entities
@@ -197,7 +200,7 @@ sequenceDiagram
     Game server-)Client: [14] Object
     end
     loop entities dynamic state
-    Game server-)Client: [29] Update entity
+    Game server-)Client: [29] Update player
     end
     Game server-)Client: [39] Friends
     loop connected friends
@@ -237,7 +240,7 @@ sequenceDiagram
     opt src or dst is equipment
     Game server-)Client: [66] Update stats
     opt is in area of interest
-    Game server-)Other client: [29] Update entity (1)
+    Game server-)Other client: [29] Update player (1)
     end
     end
 ```
@@ -278,7 +281,7 @@ sequenceDiagram
     opt destroy src is equipment
     Game server-)Client: [66] Update stats
     opt is in area of interest
-    Game server-)Other client: [29] Update entity (1)
+    Game server-)Other client: [29] Update player (1)
     end
     end
 ```
@@ -293,7 +296,7 @@ sequenceDiagram
     Game server-)Client: [27] Update slot (src)
     Game server-)Client: [66] Update stats
     opt is in area of interest
-    Game server-)Other client: [29] Update entity (4)
+    Game server-)Other client: [29] Update player (4)
     end
 ```
 
@@ -310,7 +313,7 @@ sequenceDiagram
     participant Game server
     participant Other client
     Client-)Game server: [7] Unknown (2)
-    Client-)Game server: [5] Interact with NPC
+    Client-)Game server: [5] Interact with NPC (0)
     Game server-)Client: [3] Fix to coords
     opt is in area of interest
     Game server-)Other client: [3] Fix to coords
@@ -322,3 +325,30 @@ sequenceDiagram
     end
     Client-)Game server: [11] Close dialog (1)
 ```
+
+
+### Get HP
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    Client-)Game server: [22] Request (12)
+    Game server-)Client: [19] Update NPC (1)
+```
+
+This is triggered when the player right clics a monster or enters a fight.
+This is a single event, the client makes multiple requests.
+
+### Attack
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    Client-)Game server: [7] Unknown (X)
+    Client-)Game server: [5] Interact with NPC (0)
+    Game server-)Client: [10] Basic attack
+    Game server-)Client: [19] Update NPC (1)
+```
+
+The value of message [7] seems to be between 0 and 7.
