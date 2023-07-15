@@ -1,15 +1,15 @@
 meta:
-  id: whisper
+  id: recv_channel_message
   endian: le
 seq:
-  - id: unk1
+  - type: u4
+  - id: id
     type: u4
-  - id: name
+  - type: u1
+  - id: sender
     type: strz
     size: 17
     encoding: ISO-8859-1
-  - id: unk2
-    type: u2
   - id: message
     type: strz
     encoding: ISO-8859-1

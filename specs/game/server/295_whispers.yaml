@@ -1,5 +1,5 @@
 meta:
-  id: whisper
+  id: whispers
   endian: le
 seq:
   - id: my_id

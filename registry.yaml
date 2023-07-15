@@ -233,9 +233,12 @@ parsers:
   - name: Eshop items
     when: type == Game and sender == Server and code == 97
     file: specs/game/server/97_eshop_items.yaml
-  - name: Whisper
+  - name: Recv channel message
+    when: type == Game and sender == Server and code == 294
+    file: specs/game/server/294_recv_channel_message.yaml
+  - name: Whispers
     when: type == Game and sender == Server and code == 295
-    file: specs/game/server/295_whisper.yaml
+    file: specs/game/server/295_whispers.yaml
   - name: Broadcast
     when: type == Game and sender == Server and code == 296
     file: specs/game/server/296_broadcast.yaml
