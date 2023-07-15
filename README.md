@@ -16,6 +16,8 @@ The number between brackets represents the message code. Some messages have a va
         - [Connect](#disconnect-1)
     - [Chat](#chat)
         - [Say](#say)
+        - [Whisper](#whisper)
+        - [Say to channel](#say-to-channel)
     - [Inventory](#inventory)
         - [Move](#move)
         - [Split](#split)
@@ -25,6 +27,7 @@ The number between brackets represents the message code. Some messages have a va
         - [Talk to NPC](#talk-to-npc)
         - [Get HP](#get-hp)
         - [Attack](#attack)
+        - [Move](#move)
 # Login server
 ## Authentication
 ### Login
@@ -226,6 +229,37 @@ sequenceDiagram
     end
 ```
 
+### Whisper
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    participant Other client
+    Client-)Game server: [295] Whisper
+    alt valid target
+    Game server-)Client: [295] Whispers
+    Game server-)Other client: [295] Whispers
+    else invalid target
+    Game server-)Client: [295] Whispers (error)
+    end
+```
+
+The first value of `Whisper` seems to be static and unused.
+The `Whispers` first field is the receptor of the event, the source player for Client and the destination player for Other client.
+
+### Say to channel
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    participant Other client
+    Client-)Game server: [294] Send channel message
+    opt is member of channel
+    Game server-)Client: [294] Channel message
+    Game server-)Other client: [294] Channel message
+    end
+    
+```
 ---
 
 ## Inventory
@@ -352,3 +386,18 @@ sequenceDiagram
 ```
 
 The value of message [7] seems to be between 0 and 7.
+
+### Move
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Game server
+    participant Other client
+    Client-)Game server: [4] Move
+    Game server-)Client: [5] Moved
+    opt is in area of interest
+    Game server-)Other client: [5] Moved
+    end
+    
+```
