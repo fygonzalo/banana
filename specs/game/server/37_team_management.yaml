@@ -2,7 +2,7 @@ meta:
   id: team_management
   endian: le
 seq:
-  - id: code # 01 = init, 02 = kick, 05 = disband
+  - id: code # 01 = init, 02 = kick, 04 = leaves, 05 = disband
     type: u1
   - id: team_id
     type: u4
