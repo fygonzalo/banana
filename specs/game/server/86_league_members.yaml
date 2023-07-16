@@ -1,0 +1,22 @@
+meta:
+  id: league_members
+  endian: le
+seq:
+  - id: current_character_id
+    type: u4
+  - id: member_count
+    type: u1
+  - id: items
+    type: add
+    repeat: expr
+    repeat-expr: member_count
+types:
+  add:
+    seq:
+      - id: character_id
+        type: u4
+      - id: character_name
+        type: strz
+        size: 17
+        encoding: ISO-8859-1
+      - size: 11

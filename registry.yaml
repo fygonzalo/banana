@@ -106,6 +106,12 @@ parsers:
   - name: Item split
     when: type == Game and sender == Client and code == 47
     file: specs/game/client/47_item_split.yaml
+  - name: League invite
+    when: type == Game and sender == Client and code == 66
+    file: specs/game/client/66_league_invite.yaml
+  - name: League interact
+    when: type == Game and sender == Client and code == 67
+    file: specs/game/client/67_league_interact.yaml
   - name: Set shortcut
     when: type == Game and sender == Client and code == 68
     file: specs/game/client/68_set_shortcut.yaml
@@ -221,6 +227,18 @@ parsers:
   - name: Load bank
     when: type == Game and sender == Server and code == 78
     file: specs/game/server/78_load_bank.yaml
+  - name: League system message
+    when: type == Game and sender == Server and code == 83
+    file: specs/game/server/83_league_system_message.yaml
+  - name: League info
+    when: type == Game and sender == Server and code == 84
+    file: specs/game/server/84_league_bulletin.yaml
+  - name: League info
+    when: type == Game and sender == Server and code == 85
+    file: specs/game/server/85_league_info.yaml
+  - name: League members
+    when: type == Game and sender == Server and code == 86
+    file: specs/game/server/86_league_members.yaml
   - name: Load guild bank
     when: type == Game and sender == Server and code == 89
     file: specs/game/server/89_load_guild_bank.yaml
@@ -233,6 +251,12 @@ parsers:
   - name: Eshop items
     when: type == Game and sender == Server and code == 97
     file: specs/game/server/97_eshop_items.yaml
+  - name: League member connected
+    when: type == Game and sender == Server and code == 292
+    file: specs/game/server/292_league_member_connected.yaml
+  - name: League member disconnected
+    when: type == Game and sender == Server and code == 293
+    file: specs/game/server/293_league_member_disconnected.yaml
   - name: Recv channel message
     when: type == Game and sender == Server and code == 294
     file: specs/game/server/294_recv_channel_message.yaml

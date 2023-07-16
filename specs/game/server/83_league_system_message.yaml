@@ -1,0 +1,5 @@
+meta:
+  id: league_system_message
+  endian: le
+seq:
+  - size: 34

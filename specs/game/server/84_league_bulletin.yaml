@@ -1,0 +1,9 @@
+meta:
+  id: league_bulletin
+  endian: le
+seq:
+  - id: current_character_id
+    type: u4
+  - id: message
+    type: strz
+    encoding: ISO-8859-1

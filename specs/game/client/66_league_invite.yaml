@@ -1,0 +1,8 @@
+meta:
+  id: league_invite
+  endian: le
+seq:
+  - id: character_name
+    type: strz
+    size: 17
+    encoding: ISO-8859-1

@@ -1,0 +1,10 @@
+meta:
+  id: league_interact
+  endian: le
+seq:
+  - type: u4
+  - id: operation # 2 kick, 4 upgrade rank, 5 downgrade rank, 6 hand colonel, 8 set league draws, 9 set rank name, 10 edit bulletin, 11 bulletin, 12: info, 13 members, 14 give up territory, 17 avatar
+    type: u1
+  - type: u4
+  - size: 8
+  - type: u4

@@ -1,0 +1,31 @@
+meta:
+  id: league_info
+  endian: le
+seq:
+  - id: current_character_id
+    type: u4
+  - type: u4
+  - type: u4
+  - type: u4
+  - id: league_name
+    type: strz
+    size: 11
+    encoding: ISO-8859-1
+  - size: 6
+  - id: founder_name
+    type: strz
+    size: 17
+    encoding: ISO-8859-1
+  - id: rank_infos
+    type: rank_info
+    repeat: expr
+    repeat-expr: 4
+  - size: 33
+types:
+  rank_info:
+    seq:
+      - id: rank_name
+        type: strz
+        size: 13
+        encoding: ISO-8859-1
+      - size: 4
